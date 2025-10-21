@@ -21,4 +21,8 @@ if __name__ == "__main__":
     motor = Motor(1.8, 'gasolina')
     carro = Carro('preto', 'ABC-1234', motor)
 
+    # carro._motor.motorizacao = 3.5
+    motor.motorizacao = 3.5
+    
+    
     print(carro)
