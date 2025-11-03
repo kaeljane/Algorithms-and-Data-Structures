@@ -17,6 +17,7 @@ class PilhaSequencial:
             raise PilhaException("A pilha está vazia")
         return self._dados[0]
     
+    # nunca dar erro
     def inserir(self, dado):
         self._dados.insert(0, dado)
     
