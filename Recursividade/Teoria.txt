@@ -1,0 +1,21 @@
+Recursividade
+    Funções/metodos que chamam a si mesmo
+    Facilitam a resolução de problemas complexos
+    Utilizam uma pilha de dados
+    Não são tão eficientes em comparação com a versão iterativa
+
+    Casos
+        Caso não-recursivo : 
+            Que estabelece uma condição de parada da recursividade 
+            e sem o qual a recursividade será infinita. Esta parte da definição da função 
+            não deve fazer referência à própria função
+        Caso recursivo: 
+            No qual a função chama a si mesma. O programador deve garantir
+            que uma das chamadas recursivas atinga eventualmente a condição de parada.
+
+    soma_ate_N(5) <-----------------------
+        5 + soma_ate_N(4)                15
+            4 + soma_ate_N(3)            10
+                3 + soma_ate_N(2)         6
+                    2 + soma_ate_N(1) --> 3
+                        1

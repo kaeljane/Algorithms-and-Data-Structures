@@ -65,3 +65,7 @@ if __name__ == "__main__":
                     #  t.prox 
                     #  t.prox.prox 
                     #  t.prox.prox.prox
+    p.remover()
+    print(p)        #  [30, 20, 10]
+    p.remover()
+    print(p)        #  [20, 10]
