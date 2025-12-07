@@ -3,7 +3,7 @@ class No:
         self._dado = dado
         self._dir = None
         self._esq = None
-
+    # dado ---------------
     @property
     def dado(self):
         return self._dado
@@ -12,6 +12,16 @@ class No:
     def dado(self, novo):
         self._dado = novo
     
+    # esquerda ---------------
+    @property
+    def esq(self):
+        return self._esq
+    
+    @esq.setter
+    def esq(self, novo):
+        self._esq = novo
+
+    # direita ---------------    
     @property
     def dir(self):
         return self._dir
@@ -20,10 +30,4 @@ class No:
     def dir(self, novo):
         self._dir = novo
     
-    @property
-    def esq(self):
-        return self._esq
     
-    @esq.setter
-    def esq(self, novo):
-        self._esq = novo

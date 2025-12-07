@@ -1,4 +1,4 @@
-from No import No
+from No_para_Arvore import No
 from Arvore_Binaria import ArvoreBinaria
 
 if __name__ == "__main__":
