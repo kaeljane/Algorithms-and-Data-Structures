@@ -1,52 +1,36 @@
-class PilhaException(Exception):
-    def __init__(self, mensagem):
-        super().__init__(mensagem)
-
 class PilhaSequencial:
     def __init__(self):
-        self._dados = []
+        self._pilha = []
 
     def vazio(self):
-        return len(self._dados) == 0 # retorna True or False
+        return len(self._pilha) == 0 
     
     def tamanho(self):
-        return len(self._dados)
+        return len(self._pilha)
     
     def topo(self):
-        if self.vazio():
-            raise PilhaException("A pilha está vazia")
-        return self._dados[0]
+        return self._pilha[len(self._pilha) - 1]
     
     # nunca dar erro
-    def inserir(self, dado):
-        self._dados.insert(0, dado)
+    def empilhar(self, dado):
+        self._pilha.append(dado)
     
-    def remover(self):
-        if self.vazio():
-            raise PilhaException("A pilha está vazia")
-        return self._dados.pop(0)
+    def desempilhar(self):
+        if len(self._pilha) > 0:
+            return self._pilha.pop()
     
     def __str__(self):
-        return self._dados.__str__()
+        return self._pilha.__str__()
     
     def imprimir(self):
-        print(self.__str__())
+        return self._pilha
 
-if __name__ == '__main__':
-    p = PilhaSequencial()
+teste = PilhaSequencial()
 
-    # for i in range(1, 6):
-    #     p.inserir(i*10)
-
-    # print(p)
-    # print(p.imprimir())
-
-    # p.remover()
-    # print(p)
-
-    try:
-        p.remover()
-    except PilhaException as pe: # pe seria um nome qualquer, apenas uma variavel.
-        print(pe)
-    
-    print(p)
+teste.empilhar(1)
+teste.empilhar(2)
+teste.empilhar(3)
+print(teste.imprimir())
+teste.desempilhar()
+print(teste.imprimir())
+print(teste.topo())
