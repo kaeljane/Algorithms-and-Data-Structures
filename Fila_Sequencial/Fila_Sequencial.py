@@ -1,47 +1,37 @@
-class FilaException:
-    def __init__(self, mensagem):
-        super.__init__(mensagem)
-
 class FilaSequencial:
     def __init__(self):
-        self._dados = []
+        self._fila = []
 
-    def vazio(self):
-        return len(self._dados) == 0
-    
-    def tamanho(self):
-        return len(self._dados)
-    
-    #seria o topo da pilha
-    def inicio(self):
-        if self.vazio():
-            raise FilaException('A fila está vazia')
-        return self._dados[0]
-    
-    def inserir(self, dado):
-        self._dados.append(dado)
-    
-    def remover(self):
-        if self.vazio():
-            raise FilaException('A fila está vazia')
-        return self._dados.pop(0) # retornar???
+    def push(self, dado):
+        self._fila.append(dado)
 
-    def __str__(self):
-        return self._dados.__str__()
+    def pop(self):
+        return self._fila.pop(0) # remove do início 
     
-    def imprimir(self): # chama o proprio metodo str da classe
-        print(self.__str__()) 
+    def front(self):
+        return self._fila[0]
+    
+    def imprimir(self):
+        return self._fila
+    
+    def size(self):
+        return len(self._fila)
 
-if __name__ == '__main__':
-    f = FilaSequencial()
-    # for i in range (1, 6):
-    #     f.inserir(i*10)
+    def esvaziar(self):
+        self._fila = []
+    
+fila = FilaSequencial()
 
-    # print(f)
-    try:
-        f.remover()
-    except FilaException as fe: #tem algum erro aqui
-        print(fe)
-    # f.remover()
-    # print(f)
-    print(f)
+fila.push(1)
+fila.push(2)
+fila.push(3)
+fila.push(4)
+
+print(fila.imprimir())
+fila.pop()
+print(fila.imprimir())
+print(fila.front())
+print(fila.size())
+print(fila.imprimir())
+fila.esvaziar()
+print(fila.imprimir())
