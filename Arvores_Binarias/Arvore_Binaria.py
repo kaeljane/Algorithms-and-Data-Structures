@@ -9,7 +9,20 @@ class ArvoreBinaria:
     @root.setter
     def root(self, novo_root):
         self._root = novo_root
-    
+
+    def vazia(self):
+        return self._root is None
+        
+    def buscar(self, p, valor): # p é raiz
+        if p is None:
+            return None
+        if p.dado == valor:
+            return p
+        no = self.buscar(p.esq, valor)
+        if no is None:
+            no = self.buscar(p.dir, valor)
+        return no
+        
     def pre_ordem(self, no):
         if no != None:
             print(no.dado)
